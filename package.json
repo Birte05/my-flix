@@ -1,0 +1,27 @@
+{
+  "name": "my-flix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "eslint": "^7.8.1",
+    "express": "^4.17.1",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Birte05/my-flix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Birte05/my-flix/issues"
+  },
+  "homepage": "https://github.com/Birte05/my-flix#readme"
+}
