@@ -14,7 +14,7 @@ let topMovies = [
   {
     title: 'Die unendliche Geschichte',
     author: 'Michael Ende'
-  }
+  },
   {
     title: 'Inception',
     author: 'Christopher Nolan'
@@ -68,6 +68,6 @@ app.use((err, req, res, next) => {
 });
 
 // listen for requests
-app.listen(8080, () =>
+app.listen(8080, () => {
   console.log('Your app is listening on port 8080.');
-);
+});
