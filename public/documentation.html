@@ -7,9 +7,136 @@
     <link rel=„stylesheet“ type=„text/css“ href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css“>
     <meta name="viewport" content="width"=device-width, initial-scale=1">
   </head>
-  <body>
-    <h1>My Flix</h1>
-    <p>This app will provide users with access to information
-    on different movies, directors and genres</p>
+  <body style='background-color:#c6d9ec;'>
+    <h1 style='font-family:verdana; color: #264d73;'>Documentation of the My-Flix-App</h1>
+        <p style='font-family:verdana;'>This web application will provide users with access to information
+        about different movies, directors, and genres. Users will be able to sign
+        up, update their personal information, and create a list of their favorite
+        movies.
+        </p>
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:10;}
+    .tg td{border-color:#264d73;border-style:solid;border-width:1px;font-family:verdana, sans-serif;font-size:14px;
+      overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:#264d73;border-style:solid;border-width:2px;font-family:verdana, sans-serif;font-size:14px;
+      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-ul38{position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-ul38">Request</th>
+        <th class="tg-ul38">Endpoint URL and query format</th>
+        <th class="tg-ul38">Method type</th>
+        <th class="tg-ul38">Format of Data expected in the body of the request</th>
+        <th class="tg-ul38">Format of the response data</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax">Return a list of all  movies to the user</td>
+        <td class="tg-0lax">/movies/</td>
+        <td class="tg-0lax">GET</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A JSON object holding data about all the movies</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Return data about a single movie by title</td>
+        <td class="tg-0lax">/movies/[Title]</td>
+        <td class="tg-0lax">get</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A JSON object holding data about a single movie, containing a
+          title, description, genre property, director property and image.
+          Example: <p style="color:#264d73">
+            {  "_id": alphanumeric,
+              "Title": string,
+              "Description": string,
+              "Genre": {
+                  "Name": string,
+                  "Description": string,
+              },
+              "Director": {
+                  "Name": string,
+                  "Bio": string,
+                  "Birth": date,
+                  "Death": date,
+              },
+            }</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Return Data about a Director by name</td>
+        <td class="tg-0lax">/movies/Director/[Name]</td>
+        <td class="tg-0lax">GET</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A JSON object holding data/name of the director.
+          Example: <p style="color:#264d73">
+            {
+              "Name": string,
+            }</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Register a new user</td>
+        <td class="tg-0lax">/users/</td>
+        <td class="tg-0lax">POST</td>
+        <td class="tg-0lax">A JSON object holding data about the user to add, structured like:
+          <p style="color: #264d73">
+            {
+              "Username": string,
+              "Password": string,
+              "Email": Email,
+              "Birthday": date,
+            }</td>
+        <td class="tg-0lax">A JSON object holding data about the user that was added, including an ID:
+          <p style="color: #264d73">
+            {
+              "_id": alphanumeric,
+              "Username": string,
+              "Password": string,
+              "Email": Email,
+              "Birthday": date,
+            }</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Allow user to update their user info</td>
+        <td class="tg-0lax">/users/[Username]</td>
+        <td class="tg-0lax">PUT</td>
+        <td class="tg-0lax">A JSON object holding data about the user to add, structured like:
+          <p style="color: #264d73">
+            {
+              "{
+                Username: string,
+                (required)
+                Password: string,
+                (required)
+                Email: string,
+                (required)
+                Date of Birth: date
+              }
+            }</td>
+        <td class="tg-0lax">A confirmation stating that the user's information was updated.</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Allow a user to add a movie to their list of favorites</td>
+        <td class="tg-0lax">/users/[Username]/Movies/[MovieID]</td>
+        <td class="tg-0lax">POST</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A confirmation stating that the movie was added.</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Allow users to remove a movie from their list of favorites</td>
+        <td class="tg-0lax">/users/[username]/Movies/[MovieID]</td>
+        <td class="tg-0lax">DELETE</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A confirmation stating that the movie was deleted form the list.</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Deregister a user</td>
+        <td class="tg-0lax">/users/[username]</td>
+        <td class="tg-0lax">DELETE</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A confirmation stating that the user's account was deleted.</td>
+      </tr>
+    </tbody>
+    </table>
   </body>
-</html>
