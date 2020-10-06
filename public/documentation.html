@@ -35,33 +35,72 @@
     </thead>
     <tbody>
       <tr>
+        <td class="tg-0lax">Show root page</td>
+        <td class="tg-0lax">/</td>
+        <td class="tg-0lax">GET</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">Text</td>
+      </tr>
+      <tr>
         <td class="tg-0lax">Return a list of all  movies to the user</td>
         <td class="tg-0lax">/movies/</td>
         <td class="tg-0lax">GET</td>
         <td class="tg-0lax">none</td>
-        <td class="tg-0lax">A JSON object holding data about all the movies</td>
+        <td class="tg-0lax">A JSON object holding data about
+          all the movies. Example: <p style="color:#264d73">
+          {
+            Title: {type: Sring, required: true},
+            Description: {type: String, requried: true},
+            Genre: {
+              Name: String,
+              Description: String
+            },
+            Director: {
+              Name: String,
+              Bio: String
+            },
+            Actors: [String],
+            ImmangePath: String,
+            Featured: Boolean
+          }</td>
       </tr>
       <tr>
         <td class="tg-0lax">Return data about a single movie by title</td>
         <td class="tg-0lax">/movies/[Title]</td>
-        <td class="tg-0lax">get</td>
+        <td class="tg-0lax">GET</td>
         <td class="tg-0lax">none</td>
         <td class="tg-0lax">A JSON object holding data about a single movie, containing a
           title, description, genre property, director property and image.
           Example: <p style="color:#264d73">
-            {  "_id": alphanumeric,
-              "Title": string,
-              "Description": string,
-              "Genre": {
-                  "Name": string,
-                  "Description": string,
+            {
+              Title: {type: Sring, required: true},
+              Description: {type: String, requried: true},
+              Genre: {
+                Name: String,
+                Description: String
               },
-              "Director": {
-                  "Name": string,
-                  "Bio": string,
-                  "Birth": date,
-                  "Death": date,
+              Director: {
+                Name: String,
+                Bio: String
               },
+              Actors: [String],
+              ImmangePath: String,
+              Featured: Boolean
+            }</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Return data about a genre by name</td>
+        <td class="tg-0lax">/movies/genre/[Title]</td>
+        <td class="tg-0lax">GET</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A JSON object holding data about a genre by name and description.
+          Example: <p style="color:#264d73">
+            {
+              Title: {type: Sring, required: true},
+              Genre: {
+                Name: String,
+                Description: String
+              }
             }</td>
       </tr>
       <tr>
@@ -69,10 +108,28 @@
         <td class="tg-0lax">/movies/Director/[Name]</td>
         <td class="tg-0lax">GET</td>
         <td class="tg-0lax">none</td>
-        <td class="tg-0lax">A JSON object holding data/name of the director.
+        <td class="tg-0lax">A JSON object holding name and bio of the director.
           Example: <p style="color:#264d73">
             {
-              "Name": string,
+              Director: {
+                Name: String,
+                Bio: String
+              },
+            }</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Return a list of all users</td>
+        <td class="tg-0lax">/users/</td>
+        <td class="tg-0lax">GET</td>
+        <td class="tg-0lax">none</td>
+        <td class="tg-0lax">A JSON object holding data about all the users. Example:
+          <p style="color: #264d73">
+            {
+              ID: Integer,
+              Username: String,
+              Passowrd: String,
+              Email: String,
+              Birthday: Date
             }</td>
       </tr>
       <tr>
@@ -82,19 +139,20 @@
         <td class="tg-0lax">A JSON object holding data about the user to add, structured like:
           <p style="color: #264d73">
             {
-              "Username": string,
-              "Password": string,
-              "Email": Email,
-              "Birthday": date,
-            }</td>
+              ID: Integer,
+              Username: String,
+              Passowrd: String,
+              Email: String,
+              Birthday: Date
+            } </td>
         <td class="tg-0lax">A JSON object holding data about the user that was added, including an ID:
           <p style="color: #264d73">
             {
-              "_id": alphanumeric,
-              "Username": string,
-              "Password": string,
-              "Email": Email,
-              "Birthday": date,
+              ID: Integer,
+              Username: String,
+              Passowrd: String,
+              Email: String,
+              Birthday: Date
             }</td>
       </tr>
       <tr>
@@ -104,16 +162,11 @@
         <td class="tg-0lax">A JSON object holding data about the user to add, structured like:
           <p style="color: #264d73">
             {
-              "{
-                Username: string,
-                (required)
-                Password: string,
-                (required)
-                Email: string,
-                (required)
-                Date of Birth: date
-              }
-            }</td>
+              Username: String,(required)
+              Password: String, (required)
+              Email: String, (required)
+              Birthday: Date
+            </td>
         <td class="tg-0lax">A confirmation stating that the user's information was updated.</td>
       </tr>
       <tr>
