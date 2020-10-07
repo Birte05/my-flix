@@ -1,2 +1,4 @@
 #ignore these directories and its files
 /node_modules
+.DS_Store
+.gitattributes
