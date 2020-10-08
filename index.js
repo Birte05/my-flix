@@ -229,9 +229,9 @@ app.put('/users/:username', passport.authenticate('jwt', { session: false }), (r
   Title: {type: Sring, required: true},
 }),*/
 
-app.post('/users/:username/movies/:movieID', passport.authenticate('jwt', { session: false }), (req, res) => {
+app.post('/users/:username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.username},
-    {$push: {FavoriteMovies:req.params.movieID}
+    {$push: {FavoriteMovies:req.params.MovieID}
   },
   {new: true}, //This line makes sure that the updated doc is returned
   (err, updatedUser) => {
@@ -246,10 +246,10 @@ app.post('/users/:username/movies/:movieID', passport.authenticate('jwt', { sess
 
 
 // Allow users to remove a movie from their list of favorites
-app.delete('/users/:Username/Movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
-  Users.findOneAndRemove(
-    {Username: req.params.Username},
-    {$pull: { Favorites: req.params.MovieID}},
+app.delete('/users/:username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Users.findOneAndUpdate(
+    {Username: req.params.username},
+    {$pull: { FavoriteMovies: req.params.MovieID}},
     {new:true},
     (err, updatedUser) => {
       if(err) {
