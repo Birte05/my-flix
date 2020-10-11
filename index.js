@@ -27,17 +27,21 @@ app.use(bodyParser.json()); // JSON Parsing
 app.use(morgan('common')); // logging with Morgan
 app.use(express.static('public')); //retrieves files from public folder
 app.use('/client', express.static(path.join(__dirname, 'client', 'dist'))); // add this code right after the line app.use(express.static("public"));. task 3.6 prep for hosting
-app.use(cors({ // allows for cross-origin ressource sharing
-  origin: (origin, callback) => {
-    if(!origin) return callback(null,true);
-    if(allowedOrigins.indexOf(origin) === -1)(
-      //if a specific origin isn't found on the list of allowed origins
-      let message = 'The CORS policy for this application desn\'t allow access from origin + origin;
-      return callback(new Error(message ), false);
-    )
-    return callback(null, true);
-  }
-}));  
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true)
+      if (allowedOrigins.indexOf(origin) === -1) {
+        // If a specific origin isn’t found on the list of allowed origins
+        let message =
+          'The CORS policy for this application doesn’t allow access from origin ' +
+          origin
+        return callback(new Error(message), false)
+      }
+      return callback(null, true)
+    },
+  })
+)
 
 
 // Homepage
@@ -194,7 +198,7 @@ app.post('/users',
   let errors = validationREsult(req);
 
   if(!errors.isEmpty()) {
-    retur res.status(422).json({errors: errors.array()});
+    return res.status(422).json({errors: errors.array()});
   }
 
   let hashedPassword = Users.hashPassword(req.body.Password);
