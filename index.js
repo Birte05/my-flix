@@ -10,7 +10,6 @@ const express = require('express');
   Users = Models.User;
   cors = require('cors'); // allows for cross-origin ressource sharing
 
-const { check, validationResult } = require('express-validator');
 const app = express();
 const {check, validationResult} = require('express-validator');
 
@@ -20,7 +19,7 @@ let allowedOrigins = ['https://localhost:8080', 'https://testsite.com'];
 const passport = require('passport');
 require('./passport');
 
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://birte_gall:myflixdb@cluster0.h9gqb.mongodb.net/myFlixDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Middleware //
 app.use(bodyParser.json()); // JSON Parsing
@@ -192,10 +191,10 @@ app.post('/users',
     check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
-  ], passport.authenticate('jwt', { session: false }), (req, res) => {
+  ], (req, res) => {
   
 // check the validation object for errors
-  let errors = validationREsult(req);
+  let errors = validationResult(req);
 
   if(!errors.isEmpty()) {
     return res.status(422).json({errors: errors.array()});
@@ -205,7 +204,7 @@ app.post('/users',
   Users.findOne({Username: req.body.Username }) //checks whether User already exists
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + 'already exists'); //if user exists this message is returned
+        return res.status(400).send(req.body.Username + ' already exists'); //if user exists this message is returned
       } else { //if user does not yet exist, this is the command to create the new user
         Users.create({ //schema corresponds to the schema designed in the models.js file
           Username: req.body.Username, // each value is set to a value received from the request body req.body, which is the request that the user sends.
@@ -324,7 +323,7 @@ app.delete('/users/:Username', passport.authenticate('jwt', { session: false }),
 
 
 // listen for requests
-const port = proess.envPORT || 8080;
+const port = process.envPORT || 8080;
 app.listen(port, '0.0.0.0',() => {
   console.log('Listening on Port ' + port);
 });
