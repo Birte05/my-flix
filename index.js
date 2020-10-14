@@ -19,7 +19,9 @@ let allowedOrigins = ['https://localhost:8080', 'https://testsite.com'];
 const passport = require('passport');
 require('./passport');
 
-mongoose.connect('mongodb+srv://birte_gall:myflixdb@cluster0.h9gqb.mongodb.net/myFlixDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+/* Connection needed when testing locally hosted database     
+mongoose.connect('mongodb://localhost:27017/dbname', { useNewUrlParser: true, useUnifiedTopology: true }); */
+mongoose.connect( process.env.CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Middleware //
 app.use(bodyParser.json()); // JSON Parsing
