@@ -1,6 +1,5 @@
 const express = require('express');
   bodyParser = require('body-parser');
-  uuid = require('uuid');
   morgan = require('morgan');
   path = require('path');
   //Integrating monggose with a REST API
