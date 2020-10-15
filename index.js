@@ -11,6 +11,8 @@ const express = require('express');
 
 const app = express();
 const {check, validationResult} = require('express-validator');
+app.use(bodyParser.json()); // JSON Parsing
+app.use(morgan('common')); // logging with Morgan
 
 let auth = require('./auth')(app); // imports the auth.js file into the project and (app) makes sure Express is available in the auth.js file as well
 let allowedOrigins = ['https://localhost:8080', 'https://testsite.com'];
@@ -23,8 +25,6 @@ mongoose.connect('mongodb://localhost:27017/dbname', { useNewUrlParser: true, us
 mongoose.connect( process.env.CONNECTION_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Middleware //
-app.use(bodyParser.json()); // JSON Parsing
-app.use(morgan('common')); // logging with Morgan
 app.use(express.static('public')); //retrieves files from public folder
 app.use('/client', express.static(path.join(__dirname, 'client', 'dist'))); // add this code right after the line app.use(express.static("public"));. task 3.6 prep for hosting
 app.use(
