@@ -1,5 +1,7 @@
 #ignore these directories and its files
-/node_modules
+node_modules
 .DS_Store
 .gitattributes
 .env
+client/node_modules
+client/.cache

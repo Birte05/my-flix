@@ -15,7 +15,7 @@ app.use(bodyParser.json()); // JSON Parsing
 app.use(morgan('common')); // logging with Morgan
 
 let auth = require('./auth')(app); // imports the auth.js file into the project and (app) makes sure Express is available in the auth.js file as well
-let allowedOrigins = ['https://localhost:8080', 'https://localhost:1234', 'https://testsite.com'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
 const passport = require('passport');
 require('./passport');
