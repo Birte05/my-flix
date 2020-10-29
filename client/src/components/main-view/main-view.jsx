@@ -1,19 +1,22 @@
 import React from 'react';
 import axios from 'axios';
+import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
-class MainView extends React.Component {
+export class MainView extends React.Component {
+
   constructor() {
-    //Call the superclass constructor
-    // so React can initialize it
     super();
 
-    //Initialize the state to an empty object so we can destructure it later
-    this.state = {};
+    this.state = {
+      movie: null,
+      selectedMovie: null
+    };
   }
 
   // One of the "hooks available in a React Component
   componentDidMount() {
-    axios.get('https://git.heroku.com/my-flix-berlin.git')
+    axios.get('https://my-flix-berlin.herokuapp.com/movies')
       .then(response => {
         //Assign the result to the state
         this.setState({
@@ -24,21 +27,31 @@ class MainView extends React.Component {
         console.log(error);
       });
   }
+
+  onMovieClick(movie) {
+    this.setState({
+      selectedMovie: movie
+    });
+  }
+
   // This overrides the render () method of the superclass
   // NO need to call super() though, as it does nothing by default
   render() {
     // If the state isn't initialized, this willthrow on runtime
     // before the data is initially loaded
-    const { movies } = this.state;
+    const { movies, selectedMovie } = this.state;
 
     // Before the movies have been loaded
     if (!movies) return <div className="main-view" />;
 
     return (
       <div className="main-view">
-        {movies.map(movie => (
-          <MovieCard key={movie._id} movie={movie} />
-        ))}
+        {selectedMovie
+          ? <MovieView movie={selectedMovie} />
+          : movies.map(movie => (
+            <MovieCard key={movie._id} movie={movie} onClick={movie => this.onMovieClick(movie)} />
+          ))
+        }
       </div>
     );
   }
