@@ -4,4 +4,4 @@ node_modules
 .gitattributes
 .env
 client/node_modules
-client/.cache
+.cache
