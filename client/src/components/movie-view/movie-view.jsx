@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from "react-bootstrap/Button";
 
 export class MovieView extends React.Component {
 
@@ -34,7 +35,7 @@ export class MovieView extends React.Component {
         </div>
         <div className="buttons-container">
           {/* <Link to={"/"}>  */}
-          <button variant="primary" className="back-button"><a href="/">Back</a></button>
+          <Button variant="primary" className="back-button"><a href="/">Back</a></Button>
           {/* </Link> */}
         </div>
       </div>
