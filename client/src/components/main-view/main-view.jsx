@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { LoginView } from '../login-view/login - view';
+import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
@@ -98,7 +98,7 @@ export class MainView extends React.Component {
 
     // Before the movies have been loaded
     if (!movies) return <div className='main-view' />;
-
+    console.log(user)
     return (
       <Router>
         <div className='main-view'>
@@ -110,7 +110,7 @@ export class MainView extends React.Component {
 
           <Route path='/register' render={() => <RegistrationView />} />
 
-          <Route path='movies/:movieId' render={({ match }) =>
+          <Route path='/movies/:movieId' render={({ match }) =>
             <MovieView movie={movies.find(m => m._id === match.params.movieId)} />} />;
 
           <Route path='/directors/:name' render={({ match }) => {
