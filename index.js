@@ -7,7 +7,7 @@ mongoose = require('mongoose');
 Models = require('./models.js');
 Movies = Models.Movie;
 Users = Models.User;
-cors = require('cors'); // allows for cross-origin ressource sharing
+// cors = require('cors'); // allows for cross-origin ressource sharing
 
 const app = express();
 const { check, validationResult } = require('express-validator');
@@ -15,7 +15,7 @@ app.use(bodyParser.json()); // JSON Parsing
 app.use(morgan('common')); // logging with Morgan
 
 let auth = require('./auth')(app); // imports the auth.js file into the project and (app) makes sure Express is available in the auth.js file as well
-let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
+// let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
 const passport = require('passport');
 require('./passport');
@@ -27,21 +27,21 @@ mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnified
 // Middleware //
 app.use(express.static('public')); //retrieves files from public folder
 app.use('/client', express.static(path.join(__dirname, 'client', 'dist'))); // add this code right after the line app.use(express.static("public"));. task 3.6 prep for hosting
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin) return callback(null, true)
-      if (allowedOrigins.indexOf(origin) === -1) {
-        // If a specific origin isn’t found on the list of allowed origins
-        let message =
-          'The CORS policy for this application doesn’t allow access from origin ' +
-          origin
-        return callback(new Error(message), false)
-      }
-      return callback(null, true)
-    },
-  })
-)
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (!origin) return callback(null, true)
+//       if (allowedOrigins.indexOf(origin) === -1) {
+//         // If a specific origin isn’t found on the list of allowed origins
+//         let message =
+//           'The CORS policy for this application doesn’t allow access from origin ' +
+//           origin
+//         return callback(new Error(message), false)
+//       }
+//       return callback(null, true)
+//     },
+//   })
+// )
 
 
 // Homepage
