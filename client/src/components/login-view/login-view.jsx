@@ -8,8 +8,8 @@ export const LoginView = (props) => {
   const [password, setPassword] = useState('');
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     console.log(username, password)
 
     /* Send a request to the server for authentication */
@@ -22,6 +22,7 @@ export const LoginView = (props) => {
         props.onLoggedIn(data);
       })
       .catch(e => {
+        console.log(e)
         console.log('no such user')
       });
   }

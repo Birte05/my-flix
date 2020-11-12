@@ -36353,7 +36353,7 @@ var MovieCard = /*#__PURE__*/function (_React$Component) {
         variant: "top",
         src: movie.imagePath
       }), _react.default.createElement(_Card.default.Body, null, _react.default.createElement(_Card.default.Title, null, movie.Title), _react.default.createElement(_Card.default.Text, null, movie.Description), _react.default.createElement(_reactRouterDom.Link, {
-        to: '/movies/${movie._Id}'
+        to: "/movies/".concat(movie._id)
       }, "show details")));
     }
   }]);
@@ -37615,8 +37615,8 @@ var LoginView = function LoginView(props) {
       password = _useState4[0],
       setPassword = _useState4[1];
 
-  var handleSubmit = function handleSubmit(e) {
-    e.preventDefault();
+  var handleSubmit = function handleSubmit() {
+    // e.preventDefault();
     console.log(username, password);
     /* Send a request to the server for authentication */
 
@@ -37627,6 +37627,7 @@ var LoginView = function LoginView(props) {
       var data = response.data;
       props.onLoggedIn(data);
     }).catch(function (e) {
+      console.log(e);
       console.log('no such user');
     });
   };
@@ -51643,9 +51644,31 @@ var MainView = /*#__PURE__*/function (_React$Component) {
         className: "main-view"
       });
       console.log(user);
-      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", {
+      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(Container, null, _react.default.createElement("div", {
         className: "main-view"
-      }, _react.default.createElement(_reactRouterDom.Route, {
+      }, _react.default.createElement(Navbar, {
+        className: "fixed-top",
+        bg: "dark",
+        variant: "dark"
+      }, _react.default.createElement(Navbar.Brand, {
+        href: "#home"
+      }, "Navbar"), _react.default.createElement(Nav, {
+        className: "mr-auto"
+      }, _react.default.createElement(Nav.Link, {
+        as: Link,
+        to: "/"
+      }, "Home"), _react.default.createElement(Nav.Link, {
+        as: Link,
+        to: "/user/".concat(user)
+      }, "Profile"), _react.default.createElement(Nav.Link, {
+        as: Link,
+        to: "/register"
+      }, "Sign Up"), _react.default.createElement(_reactBootstrap.Button, {
+        className: "button-secondary",
+        onClick: function onClick() {
+          return _this3.onLoggedOut();
+        }
+      }, "Logout"))), _react.default.createElement("br", null), _react.default.createElement("br", null), _react.default.createElement("br", null), _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/",
         render: function render() {
@@ -51710,7 +51733,7 @@ var MainView = /*#__PURE__*/function (_React$Component) {
             movies: movies
           });
         }
-      })));
+      }))));
     }
   }]);
 
@@ -51825,7 +51848,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49636" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
