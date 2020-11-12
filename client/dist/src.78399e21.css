@@ -12,6 +12,49 @@
   margin: auto;
   height: 100%;
 }
+body {
+  background-color: #add8e6;
+  font-family: "Lato", sans-serif;
+  font-weight: "400";
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container-box {
+  background-color: #add8e6;
+  font-family: inherit;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.button-primary {
+  border: #FF9900 1px solid;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #008080;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s opacity;
+}
+
+.button-secondary {
+  border: #FF9900 1px solid;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FF9900;
+  text-decoration: none;
+  text-align-last: right;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s opacity;
+  white-space: nowrap;
+}
 .my-flix {
   color: steelblue;
 }

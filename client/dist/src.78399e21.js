@@ -51480,7 +51480,12 @@ var ProfileView = /*#__PURE__*/function (_React$Component) {
 }(_react.default.Component);
 
 exports.ProfileView = ProfileView;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-bootstrap/Button":"../node_modules/react-bootstrap/esm/Button.js","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap/Card":"../node_modules/react-bootstrap/esm/Card.js"}],"components/main-view/main-view.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../../.nvm/versions/node/v12.18.3/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/main-view/main-view.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51493,6 +51498,8 @@ var _react = _interopRequireDefault(require("react"));
 var _axios = _interopRequireDefault(require("axios"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _movieCard = require("../movie-card/movie-card");
 
@@ -51508,9 +51515,13 @@ var _genreView = require("../genre-view/genre-view");
 
 var _profileView = require("../profile-view/profile-view");
 
+var _Container = _interopRequireDefault(require("react-bootstrap/Container"));
+
 var _reactBootstrap = require("react-bootstrap");
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _Button = _interopRequireDefault(require("react-bootstrap/esm/Button"));
+
+require("./main-view.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51642,28 +51653,28 @@ var MainView = /*#__PURE__*/function (_React$Component) {
 
       if (!movies) return _react.default.createElement("div", {
         className: "main-view"
-      });
-      console.log(user);
-      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(Container, null, _react.default.createElement("div", {
+      }); //console.log(user)
+
+      return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_Container.default, null, _react.default.createElement("div", {
         className: "main-view"
-      }, _react.default.createElement(Navbar, {
+      }, _react.default.createElement(_reactBootstrap.Navbar, {
         className: "fixed-top",
         bg: "dark",
         variant: "dark"
-      }, _react.default.createElement(Navbar.Brand, {
+      }, _react.default.createElement(_reactBootstrap.Navbar.Brand, {
         href: "#home"
-      }, "Navbar"), _react.default.createElement(Nav, {
+      }, "Navbar"), _react.default.createElement(_reactBootstrap.Nav, {
         className: "mr-auto"
-      }, _react.default.createElement(Nav.Link, {
+      }, _react.default.createElement(_reactBootstrap.Nav.Link, {
         as: Link,
         to: "/"
-      }, "Home"), _react.default.createElement(Nav.Link, {
+      }, "Home"), _react.default.createElement(_reactBootstrap.Nav.Link, {
         as: Link,
         to: "/user/".concat(user)
-      }, "Profile"), _react.default.createElement(Nav.Link, {
+      }, "Profile"), _react.default.createElement(_reactBootstrap.Nav.Link, {
         as: Link,
         to: "/register"
-      }, "Sign Up"), _react.default.createElement(_reactBootstrap.Button, {
+      }, "Sign Up"), _react.default.createElement(_Button.default, {
         className: "button-secondary",
         onClick: function onClick() {
           return _this3.onLoggedOut();
@@ -51752,7 +51763,7 @@ MainView.propTypes = {
 
 
 exports.MainView = MainView;
-},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx","../login-view/login-view":"components/login-view/login-view.jsx","../registration-view/registration-view":"components/registration-view/registration-view.jsx","../director-view/director-view":"components/director-view/director-view.jsx","../genre-view/genre-view":"components/genre-view/genre-view.jsx","../profile-view/profile-view":"components/profile-view/profile-view.jsx","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","prop-types":"../node_modules/prop-types/index.js"}],"index.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","axios":"../node_modules/axios/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","prop-types":"../node_modules/prop-types/index.js","../movie-card/movie-card":"components/movie-card/movie-card.jsx","../movie-view/movie-view":"components/movie-view/movie-view.jsx","../login-view/login-view":"components/login-view/login-view.jsx","../registration-view/registration-view":"components/registration-view/registration-view.jsx","../director-view/director-view":"components/director-view/director-view.jsx","../genre-view/genre-view":"components/genre-view/genre-view.jsx","../profile-view/profile-view":"components/profile-view/profile-view.jsx","react-bootstrap/Container":"../node_modules/react-bootstrap/esm/Container.js","react-bootstrap":"../node_modules/react-bootstrap/esm/index.js","react-bootstrap/esm/Button":"../node_modules/react-bootstrap/esm/Button.js","./main-view.scss":"components/main-view/main-view.scss"}],"index.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -51848,7 +51859,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49636" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60059" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
