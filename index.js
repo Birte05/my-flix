@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 bodyParser = require('body-parser');
 morgan = require('morgan');
@@ -26,7 +27,12 @@ mongoose.connect('mongodb+srv://birte_gall:myflixdb@cluster0.h9gqb.mongodb.net/m
 
 // Middleware //
 app.use(express.static('public')); //retrieves files from public folder
-app.use('/client', express.static(path.join(__dirname, 'client', 'dist'))); // add this code right after the line app.use(express.static("public"));. task 3.6 prep for hosting
+app.use('/client', express.static(path.join(__dirname, 'client', 'dist')));
+
+app.get('/client/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
+
 // app.use(
 //   cors({
 //     origin: (origin, callback) => {
