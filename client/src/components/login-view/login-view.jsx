@@ -35,7 +35,7 @@ export const LoginView = (props) => {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Password</Form.Label>
+        <Form.Label>Password:</Form.Label>
         <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
       </Form.Group>
       <Button variant="primary" onClick={handleSubmit}>

@@ -37639,7 +37639,7 @@ var LoginView = function LoginView(props) {
     onChange: function onChange(e) {
       return setUsername(e.target.value);
     }
-  })), _react.default.createElement(_Form.default.Group, null, _react.default.createElement(_Form.default.Label, null, "Password"), _react.default.createElement(_Form.default.Control, {
+  })), _react.default.createElement(_Form.default.Group, null, _react.default.createElement(_Form.default.Label, null, "Password:"), _react.default.createElement(_Form.default.Control, {
     type: "password",
     placeholder: "Password",
     value: password,
@@ -51666,13 +51666,13 @@ var MainView = /*#__PURE__*/function (_React$Component) {
       }, "Navbar"), _react.default.createElement(_reactBootstrap.Nav, {
         className: "mr-auto"
       }, _react.default.createElement(_reactBootstrap.Nav.Link, {
-        as: Link,
+        as: _reactRouterDom.Link,
         to: "/"
       }, "Home"), _react.default.createElement(_reactBootstrap.Nav.Link, {
-        as: Link,
+        as: _reactRouterDom.Link,
         to: "/user/".concat(user)
       }, "Profile"), _react.default.createElement(_reactBootstrap.Nav.Link, {
-        as: Link,
+        as: _reactRouterDom.Link,
         to: "/register"
       }, "Sign Up"), _react.default.createElement(_Button.default, {
         className: "button-secondary",
@@ -51859,7 +51859,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60059" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53161" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
