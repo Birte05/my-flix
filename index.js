@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 bodyParser = require('body-parser');
 morgan = require('morgan');
-path = require('path');
 //Integrating monggose with a REST API
 mongoose = require('mongoose');
 Models = require('./models.js');
