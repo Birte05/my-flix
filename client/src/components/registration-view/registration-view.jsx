@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import "./registration-view.scss";
 import axios from "axios";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+
+import {
+  Button,
+  Form,
+} from 'react-bootstrap';
 
 export function RegistrationView(props) {
   const [username, createUsername] = useState("");
@@ -31,7 +34,6 @@ export function RegistrationView(props) {
 
   return (
     <Form className="registration-form">
-      <img src={logo} alt="logo" style={{ width: "300px" }} />
       <Form.Group controlId="formBasicUsername">
         <Form.Control
           type="text"
