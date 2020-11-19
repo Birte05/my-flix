@@ -7,7 +7,7 @@ mongoose = require('mongoose');
 Models = require('./models.js');
 Movies = Models.Movie;
 Users = Models.User;
-// cors = require('cors'); // allows for cross-origin ressource sharing
+cors = require('cors'); // allows for cross-origin ressource sharing
 
 const app = express();
 const { check, validationResult } = require('express-validator');
@@ -15,14 +15,14 @@ app.use(bodyParser.json()); // JSON Parsing
 app.use(morgan('common')); // logging with Morgan
 
 let auth = require('./auth')(app); // imports the auth.js file into the project and (app) makes sure Express is available in the auth.js file as well
-// let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
+let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
 const passport = require('passport');
 require('./passport');
 
 /* Connection needed when testing locally hosted database     
 mongoose.connect('mongodb://localhost:27017/dbname', { useNewUrlParser: true, useUnifiedTopology: true }); */
-mongoose.connect('mongodb+srv://birte_gall:myflixdb@cluster0.h9gqb.mongodb.net/myFlixDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middleware //
 app.use(express.static('public')); //retrieves files from public folder
@@ -32,22 +32,21 @@ app.get('/client/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       if (!origin) return callback(null, true)
-//       if (allowedOrigins.indexOf(origin) === -1) {
-//         // If a specific origin isn’t found on the list of allowed origins
-//         let message =
-//           'The CORS policy for this application doesn’t allow access from origin ' +
-//           origin
-//         return callback(new Error(message), false)
-//       }
-//       return callback(null, true)
-//     },
-//   })
-// )
-
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true)
+      if (allowedOrigins.indexOf(origin) === -1) {
+        // If a specific origin isn’t found on the list of allowed origins
+        let message =
+          'The CORS policy for this application doesn’t allow access from origin ' +
+          origin
+        return callback(new Error(message), false)
+      }
+      return callback(null, true)
+    },
+  })
+)
 
 // Homepage
 app.get('/', (req, res) => {
@@ -168,6 +167,22 @@ app.get('/movies/Director/:name', passport.authenticate('jwt', { session: false 
   Email: String,
   Birthday: Date
 }*/
+
+// Get ONE specific user by username
+app.get(
+  '/users/:username',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Users.findOne({ Username: req.params.username })
+      .then((user) => {
+        res.status(201).json(user);
+      })
+      .catch((err) => {  // ES6-error handling
+        console.error(err);
+        res.status(500).send('Error: Could not GET this user by name.' + err);
+      });
+  }
+);
 
 app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.find()
