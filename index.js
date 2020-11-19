@@ -175,7 +175,7 @@ app.get(
   (req, res) => {
     Users.findOne({ Username: req.params.username })
       .then((user) => {
-        res.status(201).json(user);
+        res.status(200).json(user);
       })
       .catch((err) => {  // ES6-error handling
         console.error(err);
@@ -275,6 +275,7 @@ app.put('/users/:username',
           Password: req.body.Password,
           Email: req.body.Email,
           Birthday: req.body.Birthday,
+          FavoriteMovies: req.body.FavoriteMovies,
         }
       },
       { new: true }, //Makes sure updated doc is returnes
