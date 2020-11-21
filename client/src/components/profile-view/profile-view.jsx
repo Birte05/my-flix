@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { MovieView } from '../movie-view/movie-view'
 
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
+import {
+  Button,
+  Card,
+  Container,
+} from 'react-bootstrap';
 
 export class ProfileView extends React.Component {
   constructor(props) {
@@ -26,21 +29,21 @@ export class ProfileView extends React.Component {
     this.getUser(accessToken);
   }
 
-  getUser(token) {
+  getUser = (token) => {
     const username = localStorage.getItem('user');
 
     axios
-      .get('https://my-flix-berlin.herokuapp.com/users/${username}', {
+      .get(`https://my-flix-berlin.herokuapp.com/users/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
 
       .then((res) => {
         this.setState({
-          Username: res.data.Username,
-          Password: res.data.Password,
-          Email: res.data.Email,
-          Birthday: res.data.Birthday,
-          FavoriteMovies: res.data.FavoriteMovies,
+          username: res.data.Username,
+          password: res.data.Password,
+          email: res.data.Email,
+          birthday: res.data.Birthday,
+          favoriteMovies: res.data.FavoriteMovies,
         });
       })
       .catch(function (err) {
@@ -50,9 +53,9 @@ export class ProfileView extends React.Component {
 
   render() {
     const { movies } = this.props;
-    // const favoriteMovieList = movies.filter((movie) =>
-    //   this.state.favoriteMovies.includes(movie._id)
-    // );
+    const favoriteMovieList = movies.filter((movie) =>
+      this.state.favoriteMovies.includes(movie._id)
+    );
     return (
       <div>
         <Container>
@@ -65,19 +68,14 @@ export class ProfileView extends React.Component {
               <Card.Text>Email: {this.state.Email}</Card.Text>
               <Card.Text>Birthday: {this.state.Birthday}</Card.Text>
               Favorite Movies:
-              {/* {favoriteMovieList.map((movie) => (
-                <div key={movie._id} className="fav-movies-button">
-                  <Link to={`/movies/${movie._id}`}>
-                    <Button variant="link">{movie.Title}</Button>
-                  </Link>
-                  <Button
-                    size="sm"
-                    onClick={(e) => this.deleteFavoriteMovie(movie._id)}
-                  >
-                    Remove Favorite
-                  </Button>
-                </div>
-              ))} */}
+              {favoriteMovieList.map((movie) => (
+                <Card key={movie.Title}>
+                  <Card.Body>
+                    <Card.Text>{movie.Title}</Card.Text>
+                  </Card.Body>
+                  <Button>Remove from faves</Button>
+                </Card>
+              ))}
               <br />
               <br />
               <Link to={'/user/update'}>

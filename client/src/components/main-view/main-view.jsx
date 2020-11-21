@@ -1,16 +1,22 @@
 import React from 'react';
 import axios from 'axios';
 
+import {
+  Button,
+  Container,
+  Navbar,
+  Nav,
+} from 'react-bootstrap';
+
 import { connect } from 'react-redux';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types'; PropTypes deleted in task 3.5.
 
 // #0
 import { setMovies } from '../../actions/actions';
 
 import MoviesList from '../movies-list/movies-list';
-
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
@@ -19,10 +25,6 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { Link } from 'react-router-dom';
-
-import Container from 'react-bootstrap/Container';
-import { Navbar, Nav, Row, Col } from 'react-bootstrap';
-import Button from 'react-bootstrap/esm/Button';
 
 import './main-view.scss';
 
@@ -150,6 +152,7 @@ class MainView extends React.Component {
             }} />
             <Route path="/register" render={() => <RegistrationView />} />
             <Route path="/movies/:movieId" render={({ match }) => <MovieView movie={movies.find(m => m._id === match.params.movieId)} />} />
+            <Route path="/user/:username" render={() => <ProfileView movies={movies} />} />
 
             {/* Piece of code is not included in task 3.6 any more
             <Route path='/directors/:name' render={({ match }) => {

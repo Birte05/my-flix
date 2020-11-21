@@ -1,9 +1,11 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
+import {
+  Card,
+  Container,
+} from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 
 export class DirectorView extends React.Component {
   constructor() {
