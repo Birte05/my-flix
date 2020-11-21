@@ -1,12 +1,112 @@
 [
-{"_id":{"$oid":"5f757bf88380d660ac03451a"}, "Title":"Das Geisterhaus", "Description":"Im Zentrum dieses in der Zeitspanne der 1920er bis 1970er Jahre in Chile spielenden Filmes steht Esteban Trueba, ein Mann aus einfachsten Verhältnissen, der durch harte Arbeit als Goldgräber und Farmer zu Vermögen und Macht kommt.","Genre":{"Name":"Drama","Description":"Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."},"Director":{"Name":"Bille August","Bio":"Bille August is a Danish movie director, who specializes in Latin American and Iberian drama movies","Birth":"1948","Death":"  "},"ImagePath":"https://www.amazon.de/Das-Geisterhaus-Jeremy-Irons/dp/B0002KVMGO","Featured":true},
-{"_id":{"$oid":"5f76c445b73367a542395736"}, "Title":"Silence of the Lambs","Description":"A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.","Genre":{"Name":"Thriller","Description":"Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."},"Director":{"Name":"Jonathan Demme","Bio":"Robert Jonathan Demme was an American director, producer, and screenwriter.","Birth":"1944","Death":"2017"},"ImagePath":"silenceofthelambs.png","Featured":true},
-{"_id":{"$oid":"5f76c447b73367a542395737"}, "Title":"Inception","Description":"Das US-Militär entwickelte das sogenannte Traum-Sharing, ein Verfahren zur Beeinflussung des Traumes eines nichtsahnenden Opfers. Angreifer können nicht nur Mitwirkende des Traumes sein, sondern können auch die Traumwelt erschaffen und kontrollieren.","Genre":{"Name":"Action","Description":" Action film is a genre wherein physical action takes precedence in the storytelling."},"Director":{"Name":"Christopher Nolan","Bio":" Christopher Nolan is a British-US movie director, producer and screenwriter.","Birth":"1970"},"ImagePath":"inception.png","Featured":true},
-{"_id":{"$oid":"5f76c45eb73367a542395738"}, "Title":"Forrest Gump","Description":"Die Rahmenhandlung beginnt damit, dass Forrest Gump auf einer Bank an einer Bushaltestelle in Savannah im Bundesstaat Georgia sitzt. Dort erzählt er mehreren Personen in Episoden sein bisheriges Leben.","Genre":{"Name":"Drama","Description":" Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."},"Director":{"Name":"Robert Zemeckis","Bio":" Robert Zemeckis is a US movie director and producer.","Birth":"1952"},"ImagePath":"forrestgump.png","Featured":true},
-{"_id":{"$oid":"5f76c46ab73367a542395739"}, "Title":"Tenet","Description":"Ein Agent wird rekrutiert, um einen besonderen Auftrag auszuführen.","Genre":{"Name":"Action","Description":" Action film is a genre wherein physical action takes precedence in the storytelling."},"Director":{"Name":"Christopher Nolan","Bio":" Christopher Nolan is a British-US movie director, producer and screenwriter.","Birth":"1970"},"ImagePath":"tenet.png","Featured":true},
-{"_id":{"$oid":"5f76c473b73367a54239573a"}, "Title":"Nachtzug nach Lissabon","Description":"Raimund Gregorius ist ein in die Jahre gekommener Gymnasiallehrer für alte Sprachen in Bern, unter Schlaflosigkeit leidet und jeden Morgen schon vor dem Frühstück Schach mit sich selbst spielt. An einem regnerischen Morgen rettet er auf seinem Weg zur Schule eine junge Portugiesin.","Genre":{"Name":"Drama","Description":" Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."},"Director":{"Name":"Bille August","Bio":" Bille August is a Danish movie director.","Birth":"1948"},"ImagePath":"nachtzuglissabon.png","Featured":true},
-{"_id":{"$oid":"5f76c6f1bf351b003a42a798"}, "Title":"Inception","Description":"Das US-Militär entwickelte das sogenannte Traum-Sharing, ein Verfahren zur Beeinflussung des Traumes eines nichtsahnenden Opfers. Angreifer können nicht nur Mitwirkende des Traumes sein, sondern können auch die Traumwelt erschaffen und kontrollieren.","Genre":{"Name":"Action","Description":" Action film is a genre wherein physical action takes precedence in the storytelling."},"Director":{"Name":"Christopher Nolan","Bio":" Christopher Nolan is a British-US movie director, producer and screenwriter.","Birth":"1970"},"ImagePath":"inception.png","Featured":true},
-{"_id":{"$oid":"5f76c6fcbf351b003a42a799"}, "Title":"Forrest Gump","Description":"Die Rahmenhandlung beginnt damit, dass Forrest Gump auf einer Bank an einer Bushaltestelle in Savannah im Bundesstaat Georgia sitzt. Dort erzählt er mehreren Personen in Episoden sein bisheriges Leben.","Genre":{"Name":"Drama","Description":" Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."},"Director":{"Name":"Robert Zemeckis","Bio":" Robert Zemeckis is a US movie director and producer.","Birth":"1952"},"ImagePath":"forrestgump.png","Featured":true},
-{"_id":{"$oid":"5f76c706bf351b003a42a79a"}, "Title":"Tenet","Description":"Ein Agent wird rekrutiert, um einen besonderen Auftrag auszuführen.","Genre":{"Name":"Action","Description":" Action film is a genre wherein physical action takes precedence in the storytelling."},"Director":{"Name":"Christopher Nolan","Bio":" Christopher Nolan is a British-US movie director, producer and screenwriter.","Birth":"1970"},"ImagePath":"tenet.png","Featured":true},
-{"_id":{"$oid":"5f76c712bf351b003a42a79b"}, "Title":"Nachtzug nach Lissabon","Description":"Raimund Gregorius ist ein in die Jahre gekommener Gymnasiallehrer für alte Sprachen in Bern, unter Schlaflosigkeit leidet und jeden Morgen schon vor dem Frühstück Schach mit sich selbst spielt. An einem regnerischen Morgen rettet er auf seinem Weg zur Schule eine junge Portugiesin.","Genre":{"Name":"Drama","Description":" Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."},"Director":{"Name":"Bille August","Bio":" Bille August is a Danish movie director.","Birth":"1948"},"ImagePath":"nachtzuglissabon.png","Featured":true}
+  {
+    "_id": {
+      "$oid": "5f757bf88380d660ac03451a"
+    },
+    "Title": "Das Geisterhaus",
+    "Description": "Im Zentrum dieses in der Zeitspanne der 1920er bis 1970er Jahre in Chile spielenden Filmes steht Esteban Trueba, ein Mann aus einfachsten Verhältnissen, der durch harte Arbeit als Goldgräber und Farmer zu Vermögen und Macht kommt.",
+    "Genre": {
+      "Name": "Drama",
+      "Description": "Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."
+    },
+    "Director": {
+      "Name": "Bille August",
+      "Bio": "Bille August is a Danish movie director, who specializes in Latin American and Iberian drama movies",
+      "Birth": "1948",
+      "Death": "  "
+    },
+    "ImagePath": "https://www.amazon.de/Das-Geisterhaus-Jeremy-Irons/dp/B0002KVMGO",
+    "Featured": true
+  },
+  {
+    "_id": {
+      "$oid": "5f76c445b73367a542395736"
+    },
+    "Title": "Silence of the Lambs",
+    "Description": "A young FBI cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer.",
+    "Genre": {
+      "Name": "Thriller",
+      "Description": "Thriller film, also known as suspense film or suspense thriller, is a broad film genre that involves excitement and suspense in the audience."
+    },
+    "Director": {
+      "Name": "Jonathan Demme",
+      "Bio": "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+      "Birth": "1944",
+      "Death": "2017"
+    },
+    "ImagePath": "silenceofthelambs.png",
+    "Featured": true
+  },
+  {
+    "_id": {
+      "$oid": "5f76c45eb73367a542395738"
+    },
+    "Title": "Forrest Gump",
+    "Description": "Die Rahmenhandlung beginnt damit, dass Forrest Gump auf einer Bank an einer Bushaltestelle in Savannah im Bundesstaat Georgia sitzt. Dort erzählt er mehreren Personen in Episoden sein bisheriges Leben.",
+    "Genre": {
+      "Name": "Drama",
+      "Description": " Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."
+    },
+    "Director": {
+      "Name": "Robert Zemeckis",
+      "Bio": " Robert Zemeckis is a US movie director and producer.",
+      "Birth": "1952"
+    },
+    "ImagePath": "forrestgump.png",
+    "Featured": true
+  },
+  {
+    "_id": {
+      "$oid": "5f76c46ab73367a542395739"
+    },
+    "Title": "Tenet",
+    "Description": "Ein Agent wird rekrutiert, um einen besonderen Auftrag auszuführen.",
+    "Genre": {
+      "Name": "Action",
+      "Description": " Action film is a genre wherein physical action takes precedence in the storytelling."
+    },
+    "Director": {
+      "Name": "Christopher Nolan",
+      "Bio": " Christopher Nolan is a British-US movie director, producer and screenwriter.",
+      "Birth": "1970"
+    },
+    "ImagePath": "tenet.png",
+    "Featured": true
+  },
+  {
+    "_id": {
+      "$oid": "5f76c473b73367a54239573a"
+    },
+    "Title": "Nachtzug nach Lissabon",
+    "Description": "Raimund Gregorius ist ein in die Jahre gekommener Gymnasiallehrer für alte Sprachen in Bern, unter Schlaflosigkeit leidet und jeden Morgen schon vor dem Frühstück Schach mit sich selbst spielt. An einem regnerischen Morgen rettet er auf seinem Weg zur Schule eine junge Portugiesin.",
+    "Genre": {
+      "Name": "Drama",
+      "Description": " Within film, television and radio (but not theatre), drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles."
+    },
+    "Director": {
+      "Name": "Bille August",
+      "Bio": " Bille August is a Danish movie director.",
+      "Birth": "1948"
+    },
+    "ImagePath": "nachtzuglissabon.png",
+    "Featured": true
+  },
+  {
+    "_id": {
+      "$oid": "5f76c6f1bf351b003a42a798"
+    },
+    "Title": "Inception",
+    "Description": "Das US-Militär entwickelte das sogenannte Traum-Sharing, ein Verfahren zur Beeinflussung des Traumes eines nichtsahnenden Opfers. Angreifer können nicht nur Mitwirkende des Traumes sein, sondern können auch die Traumwelt erschaffen und kontrollieren.",
+    "Genre": {
+      "Name": "Action",
+      "Description": " Action film is a genre wherein physical action takes precedence in the storytelling."
+    },
+    "Director": {
+      "Name": "Christopher Nolan",
+      "Bio": " Christopher Nolan is a British-US movie director, producer and screenwriter.",
+      "Birth": "1970"
+    },
+    "ImagePath": "inception.png",
+    "Featured": true
+  },
 ]
