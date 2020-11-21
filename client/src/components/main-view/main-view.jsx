@@ -118,7 +118,7 @@ class MainView extends React.Component {
           <div className='main-view'>
 
             <Navbar className="fixed-top" bg="dark" variant="dark">
-              <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+              <Navbar.Brand href="#home">My flix</Navbar.Brand>
               <Nav className="mr-auto">
                 <Nav.Link as={Link} to='/'>
                   Home
