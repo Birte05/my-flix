@@ -15,7 +15,7 @@
       "Birth": "1948",
       "Death": "  "
     },
-    "ImagePath": "https://www.amazon.de/Das-Geisterhaus-Jeremy-Irons/dp/B0002KVMGO",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BOWRmNjFkOGQtNjk1MC00OWM0LWE3YjItNWIxNWM5MjYzZjcxXkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "Featured": true
   },
   {
@@ -34,7 +34,7 @@
       "Birth": "1944",
       "Death": "2017"
     },
-    "ImagePath": "silenceofthelambs.png",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "Featured": true
   },
   {
@@ -52,7 +52,7 @@
       "Bio": " Robert Zemeckis is a US movie director and producer.",
       "Birth": "1952"
     },
-    "ImagePath": "forrestgump.png",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY268_CR1,0,182,268_AL_.jpg",
     "Featured": true
   },
   {
@@ -70,7 +70,7 @@
       "Bio": " Christopher Nolan is a British-US movie director, producer and screenwriter.",
       "Birth": "1970"
     },
-    "ImagePath": "tenet.png",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BYzg0NGM2NjAtNmIxOC00MDJmLTg5ZmYtYzM0MTE4NWE2NzlhXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_UX182_CR0,0,182,268_AL_.jpg",
     "Featured": true
   },
   {
@@ -88,7 +88,7 @@
       "Bio": " Bille August is a Danish movie director.",
       "Birth": "1948"
     },
-    "ImagePath": "nachtzuglissabon.png",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BNDE5OTkxNzMxNl5BMl5BanBnXkFtZTgwMjQ4NjY3MDE@._V1_UY268_CR6,0,182,268_AL_.jpg",
     "Featured": true
   },
   {
@@ -106,7 +106,7 @@
       "Bio": " Christopher Nolan is a British-US movie director, producer and screenwriter.",
       "Birth": "1970"
     },
-    "ImagePath": "inception.png",
+    "ImagePath": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
     "Featured": true
   }
 ]
