@@ -8,9 +8,9 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "eslint": "^7.8.1",
     "express": "^4.17.1",
     "express-validator": "^6.6.1",
+    "jsdoc": "^3.6.6",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "mongoose": "^5.10.7",
@@ -19,7 +19,6 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -34,5 +33,17 @@
   "bugs": {
     "url": "https://github.com/Birte05/my-flix/issues"
   },
-  "homepage": "https://github.com/Birte05/my-flix#readme"
+  "homepage": "https://github.com/Birte05/my-flix#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-native": "^3.10.0"
+  }
 }
